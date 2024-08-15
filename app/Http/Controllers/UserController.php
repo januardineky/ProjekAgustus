@@ -9,6 +9,11 @@ use Illuminate\Support\Facades\Auth;
 class UserController extends Controller
 {
     //
+    public function show()
+    {
+        return view('home');
+    }
+
     public function auth(Request $request)
     {
         $validate = $request->validate([

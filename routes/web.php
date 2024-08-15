@@ -19,10 +19,14 @@ Route::get('/', function () {
     return view('login');
 });
 Route::post('/auth/login',[UserController::class,'auth']);
+Route::get('/home',[UserController::class,'show']);
 Route::middleware(['\App\Http\Middleware\StatusLogin::class'])->group(function () {
     Route::get('/index',[ProdukController::class,'index']);
     Route::post('/index/search',[ProdukController::class,'search']);
     Route::get('/index/create',[ProdukController::class,'create']);
+    Route::get('/index/delete/{id}',[ProdukController::class,'delete']);
     Route::post('/index/create',[ProdukController::class,'input']);
+    Route::get('/index/edit/{id}',[ProdukController::class,'edit']);
+    Route::post('/index/edit/{id}',[ProdukController::class,'update']);
     Route::get('/auth/logout',[UserController::class,'logout']);
 });

@@ -21,8 +21,18 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark gradient-custom">
-        <div class="container px-4 px-lg-5">
-            <a class="navbar-brand" href="#!">JanStrore</a>
+        <div class="container px-2 px-lg-3">
+            <a class="navbar-brand" href="/index">Ini Judul</a>
+            <div style="margin-right: 400px">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Pesanan</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link active" href="#">Pelanggan</a>
+                      </li>
+                </ul>
+            </div>
                 <form action="/index/search" method="POST" class="d-flex">
                     @csrf
                     <input class="form-control me-2" type="search" placeholder="Search" name="cari" aria-label="Search">
@@ -37,6 +47,46 @@
             </div>
         </div>
     </nav>
+    <div class="container mt-4">
+        <div class="row">
+            <!-- Card Statistik 1 -->
+            <div class="col-md-3 mb-4">
+                <div class="card text-white bg-primary">
+                    <div class="card-body">
+                        <h5 class="card-title">Total Penjualan</h5>
+                        <p class="card-text">Rp1,200,000,000</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Card Statistik 2 -->
+            <div class="col-md-3 mb-4">
+                <div class="card text-white bg-success">
+                    <div class="card-body">
+                        <h5 class="card-title">Total Produk Terjual</h5>
+                        <p class="card-text">1,234</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Card Statistik 3 -->
+            <div class="col-md-3 mb-4">
+                <div class="card text-white bg-danger">
+                    <div class="card-body">
+                        <h5 class="card-title">Pesanan Terpending</h5>
+                        <p class="card-text">89</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Card Statistik 4 -->
+            <div class="col-md-3 mb-4">
+                <div class="card text-white bg-warning">
+                    <div class="card-body">
+                        <h5 class="card-title">Produk Stok Habis</h5>
+                        <p class="card-text">15</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <hr>
     <div class="container pt-5">
         <div class="row">
             <div class="col-md-6">
@@ -68,14 +118,17 @@
                     <td>{{ $item->stok }}</td>
                     <td><img src="{{ asset('storage/gambar/'.$item->gambar) }}" alt="" style="width: 50px; height:50px"></td>
                     <td>
-                        <a href="#" onclick="return window.confirm('Yakin hapus data ini?')" class="btn btn-danger">Hapus</a>
-                        <a href="#" class="btn btn-info">Edit</a>
+                        <a href="/index/delete/{{ $item->id }}" onclick="return window.confirm('Yakin hapus data ini?')" class="btn btn-danger">Hapus</a>
+                        <a href="/index/edit/{{ $item->id }}" class="btn btn-info">Edit</a>
                     </td>
                 </tr>
                 @endforeach
             </tbody>
         </table>
     </div>
+    <footer class="container-fluid py-3 gradient-custom" style="bottom: 0">
+        <div class=""><p class="m-0 text-center text-white">Copyright &copy; Januardi 2024</p></div>
+    </footer>
 </body>
 <script src="{{ asset('asset/js/bootstrap.min.js') }}"></script>
 </html>

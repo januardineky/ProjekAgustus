@@ -39,23 +39,23 @@ background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 
                         Form Produk
                     </div>
                     <div class="card-body">
-                        <form action="/index/create" method="POST" enctype="multipart/form-data">
+                        <form action="/index/edit/{{ $produk->id }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group pt-2">
                                 <label for="productName">Nama Produk</label>
-                                <input type="text" class="form-control" id="productName" placeholder="Masukkan nama produk" name="name">
+                                <input type="text" class="form-control" id="productName" placeholder="Masukkan nama produk" name="name" value="{{ $produk->name }}">
                             </div>
                             <div class="form-group pt-2">
                                 <label for="category">Kategori</label>
-                                <input type="text" class="form-control" id="category" placeholder="Masukkan kategori produk" name="kategori">
+                                <input type="text" class="form-control" id="category" placeholder="Masukkan kategori produk" name="kategori" value="{{ $produk->kategori }}">
                             </div>
                             <div class="form-group pt-2">
                                 <label for="price">Harga</label>
-                                <input type="number" class="form-control" id="price" placeholder="Masukkan harga produk" name="harga">
+                                <input type="number" class="form-control" id="price" placeholder="Masukkan harga produk" name="harga" value="{{ $produk->harga }}">
                             </div>
                             <div class="form-group pt-2">
                                 <label for="quantity">Stok</label>
-                                <input type="number" class="form-control" id="quantity" placeholder="Masukkan jumlah produk" name="stok">
+                                <input type="number" class="form-control" id="quantity" placeholder="Masukkan jumlah produk" name="stok" value="{{ $produk->stok }}">
                             </div>
                             <div class="form-group pt-2">
                                 <label for="image">Gambar</label>

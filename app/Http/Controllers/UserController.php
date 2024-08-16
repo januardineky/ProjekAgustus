@@ -9,11 +9,6 @@ use Illuminate\Support\Facades\Auth;
 class UserController extends Controller
 {
     //
-    public function show()
-    {
-        return view('home');
-    }
-
     public function auth(Request $request)
     {
         $validate = $request->validate([
@@ -21,10 +16,20 @@ class UserController extends Controller
             'password' => ['required']
         ]);
 
-        if (Auth::attempt($validate)) {
-            return redirect('/index');
+        if (auth()->attempt($validate)) {
+
+            // buat ulang session login
+            $request->session()->regenerate();
+
+            if (auth()->user()->level === 'admin') {
+                return redirect('/index');
+            }
+            else {
+                return redirect('/home');
+            }
         }
         return redirect()->back();
+
     }
     public function logout()
     {

@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
-            $table->enum('level', ['admin', 'level']);
+            $table->enum('level', ['admin', 'pelanggan']);
             $table->string('no');
             $table->string('alamat');
             $table->timestamp('email_verified_at')->nullable();

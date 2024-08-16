@@ -16,6 +16,12 @@ class ProdukController extends Controller
         return view('index',$data);
     }
 
+    public function home()
+    {
+        $data['produk'] = Produk::all();
+        return view('home',$data);
+    }
+
     public function search(Request $request)
     {
         $data['produk'] = Produk::where('name','LIKE','%'.$request->cari.'%')->orwhere('kategori','LIKE','%'.$request->cari.'%')->get();

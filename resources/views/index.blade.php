@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,6 +20,7 @@
         }
     </style>
 </head>
+
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark gradient-custom">
         <div class="container px-2 px-lg-3">
@@ -27,24 +29,25 @@
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link active" href="#">Pesanan</a>
-                      </li>
-                      <li class="nav-item">
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link active" href="#">Pelanggan</a>
-                      </li>
+                    </li>
                 </ul>
             </div>
-                <form action="/index/search" method="POST" class="d-flex">
-                    @csrf
-                    <input class="form-control me-2" type="search" placeholder="Search" name="cari" aria-label="Search">
-                    <input class="btn btn-outline-light" type="submit"></input>
-                </form>
-                <form class="d-flex">
-                    <a href="/auth/logout" onclick="return window.confirm('Apakah anda ingin Logout?')" style="text-decoration: none" class="btn btn-outline-light">
+            <form action="/index/search" method="POST" class="d-flex">
+                @csrf
+                <input class="form-control me-2" type="search" placeholder="Search" name="cari" aria-label="Search">
+                <input class="btn btn-outline-light" type="submit"></input>
+            </form>
+            <form class="d-flex">
+                <a href="/auth/logout" onclick="return window.confirm('Apakah anda ingin Logout?')"
+                    style="text-decoration: none" class="btn btn-outline-light">
                     <i class="bi bi-box-arrow-right"></i>
                     Logout
-                    </a>
-                </form>
-            </div>
+                </a>
+            </form>
+        </div>
         </div>
     </nav>
     <div class="container mt-4">
@@ -86,7 +89,8 @@
                 </div>
             </div>
         </div>
-    <hr>
+        <hr>
+    </div>
     <div class="container pt-5">
         <div class="row">
             <div class="col-md-6">
@@ -109,26 +113,30 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($produk as $key =>$item)
-                <tr>
-                    <td>{{ $key+1 }}</td>
-                    <td>{{ $item->name }}</td>
-                    <td>{{ $item->kategori }}</td>
-                    <td>Rp. {{ $item->harga }}</td>
-                    <td>{{ $item->stok }}</td>
-                    <td><img src="{{ asset('storage/gambar/'.$item->gambar) }}" alt="" style="width: 50px; height:50px"></td>
-                    <td>
-                        <a href="/index/delete/{{ $item->id }}" onclick="return window.confirm('Yakin hapus data ini?')" class="btn btn-danger">Hapus</a>
-                        <a href="/index/edit/{{ $item->id }}" class="btn btn-info">Edit</a>
-                    </td>
-                </tr>
+                @foreach ($produk as $key => $item)
+                    <tr>
+                        <td>{{ $key + 1 }}</td>
+                        <td>{{ $item->name }}</td>
+                        <td>{{ $item->kategori }}</td>
+                        <td>Rp. {{ $item->harga }}</td>
+                        <td>{{ $item->stok }}</td>
+                        <td><img src="{{ asset('storage/gambar/'.$item->gambar) }}" alt=""
+                                style="width: 50px; height:50px"></td>
+                        <td>
+                            <a href="/index/delete/{{ $item->id }}"
+                                onclick="return window.confirm('Yakin hapus data ini?')"
+                                class="btn btn-danger">Hapus</a>
+                            <a href="/index/edit/{{ $item->id }}" class="btn btn-info">Edit</a>
+                        </td>
+                    </tr>
                 @endforeach
             </tbody>
         </table>
     </div>
-    <footer class="container-fluid py-3 gradient-custom" style="bottom: 0">
-        <div class=""><p class="m-0 text-center text-white">Copyright &copy; Januardi 2024</p></div>
+    <footer class="container-fluid py-3 fixed-bottom gradient-custom" style="bottom: 0">
+        <p class="m-0 text-center text-white">Copyright &copy; Januardi 2024</p>
     </footer>
 </body>
 <script src="{{ asset('asset/js/bootstrap.min.js') }}"></script>
+
 </html>

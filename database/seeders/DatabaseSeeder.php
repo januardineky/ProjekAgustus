@@ -30,6 +30,15 @@ class DatabaseSeeder extends Seeder
             'alamat' => 'Kab. Tasikmalaya',
         ]);
 
+        User::create([
+            'name' => 'def',
+            'email' => 'def@gmail.com',
+            'password' => bcrypt('def'),
+            'no' => '082156747864',
+            'level' => 'pelanggan',
+            'alamat' => 'Kota Tasikmalaya',
+        ]);
+
         Produk::create([
             'name' => 'Pensil (1 Pack)',
             'kategori' => 'Alat Tulis',

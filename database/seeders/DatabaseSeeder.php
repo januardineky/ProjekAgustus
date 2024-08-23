@@ -27,7 +27,7 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('abc'),
             'no' => '082156747865',
             'level' => 'admin',
-            'alamat' => 'Kab. Tasikmalaya',
+            'kab' => 'Kab. Tasikmalaya',
         ]);
 
         User::create([
@@ -36,7 +36,7 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('def'),
             'no' => '082156747864',
             'level' => 'pelanggan',
-            'alamat' => 'Kota Tasikmalaya',
+            'kab' => 'Kota Tasikmalaya',
         ]);
 
         Produk::create([

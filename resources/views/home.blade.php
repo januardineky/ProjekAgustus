@@ -31,34 +31,52 @@
         <nav class="navbar navbar-expand-lg navbar-dark gradient-custom">
             <div class="container px-4 px-lg-5">
                 <a class="navbar-brand" href="#!">Ini Judul</a>
-                    <form class="d-flex" style="margin-left: 680px">
-                        <button class="btn btn-outline-light" type="submit">
+                    <form class="d-flex" action="/home/search" method="POST" style="margin-left: 250px">
+                        @csrf
+                        <input class="form-control me-2 w-100" type="search" placeholder="Search" name="cari" aria-label="Search">
+                        <input class="btn btn-outline-light" value="Cari" type="submit"></input>
+                    </form>
+                        <a href="/cart" style="text-decoration: none" class="btn btn-outline-light" style="margin-left: 50px">
                             <i class="bi-cart me-1"></i>
                             Keranjang
-                            <span class="badge bg-light text-black ms-1 rounded-pill">0</span>
-                        </button>
-                    </form>
-                    <form class="d-flex">
+                        </a>
                         <a href="/auth/logout" onclick="return window.confirm('Apakah anda ingin Logout?')" style="text-decoration: none" class="btn btn-outline-light">
                         <i class="bi bi-box-arrow-right"></i>
                         Logout
                         </a>
-                    </form>
                 </div>
             </div>
         </nav>
         <!-- Header-->
-        <header class="bg-dark py-5">
-            <div class="container px-4 px-lg-5 my-5">
-                <div class="text-center text-white">
-                    <h1 class="display-4 fw-bolder">Shop in style</h1>
-                    <p class="lead fw-normal text-white-50 mb-0">With this shop hompeage template</p>
-                </div>
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
             </div>
-        </header>
+            <div class="carousel-inner bg-dark">
+              <div class="carousel-item text-center active">
+                <img src="{{ asset('asset/logo/asset5.jpg') }}" width="600px" alt="...">
+              </div>
+              <div class="carousel-item text-center">
+                <img src="{{ asset('asset/logo/asset6.jpg') }}" width="600px" alt="...">
+              </div>
+              <div class="carousel-item text-center">
+                <img src="{{ asset('asset/logo/asset7.jpg') }}" width="600px" alt="...">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
         <!-- Section-->
         <section class="py-5">
-            <div class="container px-4 px-lg-5 mt-5">
+            <div class="container px-4 px-lg-5 mt-5" style="padding-bottom: 100px">
                 <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
                     @foreach ($produk as $key => $item)
                     <div class="col mb-5">

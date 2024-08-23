@@ -29,6 +29,13 @@ class ProdukController extends Controller
         return view('index',$data);
     }
 
+    public function cari(Request $request)
+    {
+        $data['produk'] = Produk::where('name','LIKE','%'.$request->cari.'%')->orwhere('kategori','LIKE','%'.$request->cari.'%')->get();
+        $data['total_produk'] = $data['produk']->count();
+        return view('home',$data);
+    }
+
     public function create()
     {
         return view('create');
@@ -89,6 +96,10 @@ class ProdukController extends Controller
         ]);
 
         return redirect('/index');
+    }
+    public function cart()
+    {
+        return view('cart');
     }
 
 }

@@ -89,9 +89,8 @@
                 </div>
             </div>
         </div>
-        <hr>
     </div>
-    <div class="container pt-5">
+    <div class="container pt-5" style="padding-bottom: 250px">
         <div class="row">
             <div class="col-md-6">
                 <a href="/index/create" class="btn btn-primary">Tambah Data</a><br>
@@ -133,7 +132,7 @@
             </tbody>
         </table>
     </div>
-    <footer class="container-fluid py-3 fixed-bottom gradient-custom" style="bottom: 0">
+    <footer class="container-fluid py-3 fixed-bottom gradient-custom" style="bottom: 0; position: relative">
         <p class="m-0 text-center text-white">Copyright &copy; Januardi 2024</p>
     </footer>
 </body>

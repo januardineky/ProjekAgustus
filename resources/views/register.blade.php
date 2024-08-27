@@ -61,93 +61,93 @@ border-bottom-right-radius: 15px;
                     <div class="col-lg-6">
                       <div class="p-5">
                         <form action="/createuser" method="post">
-                        @csrf
-                        <h3 class="fw-normal mb-5 text-white">Informasi Umum</h3>
+                            @csrf
+                            <h3 class="fw-normal mb-5 text-white">Informasi Umum</h3>
 
-                        <div class="mb-4 pb-2">
-                            <div data-mdb-input-init class="form-outline">
-                              <input type="text" id="form3Examplev4" name="name" class="form-control form-control-lg" required/>
-                              <label class="form-label text-white"  for="form3Examplev4">Nama Lengkap</label>
+                            <div class="mb-4 pb-2">
+                                <div data-mdb-input-init class="form-outline">
+                                <input type="text" id="form3Examplev4" name="name" class="form-control form-control-lg" required/>
+                                <label class="form-label text-white"  for="form3Examplev4">Nama Lengkap</label>
+                                </div>
                             </div>
-                          </div>
 
-                          <div class="mb-4">
-                            <div data-mdb-input-init class="form-outline form-white">
-                              <input type="email" id="form3Examplea9" name="email" class="form-control form-control-lg" required/>
-                              <label class="form-label text-white" for="form3Examplea9">Email</label>
+                            <div class="mb-4">
+                                <div data-mdb-input-init class="form-outline form-white">
+                                <input type="email" id="form3Examplea9" name="email" class="form-control form-control-lg" required/>
+                                <label class="form-label text-white" for="form3Examplea9">Email</label>
+                                </div>
                             </div>
-                          </div>
 
-                          <div class="mb-4 pb-2">
-                            <div data-mdb-input-init class="form-outline form-white">
-                              <input type="number" id="form3Examplea6" name="no" class="form-control form-control-lg" required/>
-                              <label class="form-label text-white"  for="form3Examplea6">Nomor Telpon</label>
-                            </div>
-                          </div>
-
-                        <div class="row">
                             <div class="mb-4 pb-2">
                                 <div data-mdb-input-init class="form-outline form-white">
-                                  <input type="password" id="form3Examplea6" name="password" class="form-control form-control-lg" required />
-                                  <label class="form-label text-white"  for="form3Examplea6">Password</label>
+                                <input type="number" id="form3Examplea6" name="no" class="form-control form-control-lg" required/>
+                                <label class="form-label text-white"  for="form3Examplea6">Nomor Telpon</label>
                                 </div>
-                              </div>
-                        </div>
-
-                      </div>
-                    </div>
-                    <div class="col-lg-6 bg-transparent text-white">
-                      <div class="p-5">
-                        <h3 class="fw-normal mb-5">Informasi Tambahan</h3>
-
-                        <div class="mb-4 pb-2">
-                          <div data-mdb-input-init class="form-outline form-white">
-                            <input type="text" id="form3Examplea2" name="jalan" class="form-control form-control-lg" />
-                            <label class="form-label" for="form3Examplea2">Nama Jalan</label>
-                          </div>
-                        </div>
-
-                        <div class="mb-4 pb-2">
-                          <div data-mdb-input-init class="form-outline form-white">
-                            <input type="text" id="form3Examplea3" name="kab" class="form-control form-control-lg" />
-                            <label class="form-label" for="form3Examplea3">Kabupaten/Kota</label>
-                          </div>
-                        </div>
-
-                        <div class="row">
-                          <div class="col-md-5 mb-4 pb-2">
-
-                            <div data-mdb-input-init class="form-outline form-white">
-                              <input type="text" id="form3Examplea4" name="pos" class="form-control form-control-lg" />
-                              <label class="form-label" for="form3Examplea4">Kode Pos</label>
                             </div>
 
-                          </div>
-                          <div class="col-md-7 mb-4 pb-2">
-
-                            <div data-mdb-input-init class="form-outline form-white">
-                              <input type="text" id="form3Examplea5" name="kec" class="form-control form-control-lg" />
-                              <label class="form-label"  for="form3Examplea5">Kecamatan</label>
+                            <div class="row">
+                                <div class="mb-4 pb-2">
+                                    <div data-mdb-input-init class="form-outline form-white">
+                                    <input type="password" id="form3Examplea6" name="password" class="form-control form-control-lg" required />
+                                    <label class="form-label text-white"  for="form3Examplea6">Password</label>
+                                    </div>
+                                </div>
                             </div>
 
-                          </div>
                         </div>
+                        </div>
+                        <div class="col-lg-6 bg-transparent text-white">
+                        <div class="p-5">
+                            <h3 class="fw-normal mb-5">Informasi Tambahan</h3>
 
-                        <div class="mb-4">
+                            <div class="mb-4 pb-2">
                             <div data-mdb-input-init class="form-outline form-white">
-                              <input type="text" id="form3Examplea9" name="detail" class="form-control form-control-lg" />
-                              <label class="form-label" for="form3Examplea9">Detail Tambahan</label>
+                                <input type="text" id="form3Examplea2" name="jalan" class="form-control form-control-lg" />
+                                <label class="form-label" for="form3Examplea2">Nama Jalan</label>
                             </div>
-                          </div>
+                            </div>
 
-                        <div class="form-check d-flex justify-content-start mb-4 pb-3">
-                          <input class="form-check-input me-3" type="checkbox" value="" id="form2Example3c" />
-                          <label class="form-check-label text-white" for="form2Example3">
-                            Saya Menerima <a href="#!" class="text-white"><u>Syarat dan Ketentuan</u></a> Situs Ini
-                          </label>
-                        </div>
+                            <div class="mb-4 pb-2">
+                            <div data-mdb-input-init class="form-outline form-white">
+                                <input type="text" id="form3Examplea3" name="kab" class="form-control form-control-lg" />
+                                <label class="form-label" for="form3Examplea3">Kabupaten/Kota</label>
+                            </div>
+                            </div>
 
-                        <input type="submit" value="Register" class="btn btn-outline-light w-100"></input>
+                            <div class="row">
+                            <div class="col-md-5 mb-4 pb-2">
+
+                                <div data-mdb-input-init class="form-outline form-white">
+                                <input type="text" id="form3Examplea4" name="pos" class="form-control form-control-lg" />
+                                <label class="form-label" for="form3Examplea4">Kode Pos</label>
+                                </div>
+
+                            </div>
+                            <div class="col-md-7 mb-4 pb-2">
+
+                                <div data-mdb-input-init class="form-outline form-white">
+                                <input type="text" id="form3Examplea5" name="kec" class="form-control form-control-lg" />
+                                <label class="form-label"  for="form3Examplea5">Kecamatan</label>
+                                </div>
+
+                            </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <div data-mdb-input-init class="form-outline form-white">
+                                <input type="text" id="form3Examplea9" name="detail" class="form-control form-control-lg" />
+                                <label class="form-label" for="form3Examplea9">Detail Tambahan</label>
+                                </div>
+                            </div>
+
+                            <div class="form-check d-flex justify-content-start mb-4 pb-3">
+                            <input class="form-check-input me-3" type="checkbox" value="" id="form2Example3c" />
+                            <label class="form-check-label text-white" for="form2Example3">
+                                Saya Menerima <a href="#!" class="text-white"><u>Syarat dan Ketentuan</u></a> Situs Ini
+                            </label>
+                            </div>
+
+                            <input type="submit" value="Register" class="btn btn-outline-light w-100"></input>
                     </form>
 
                       </div>

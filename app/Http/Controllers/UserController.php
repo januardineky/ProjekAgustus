@@ -73,7 +73,8 @@ class UserController extends Controller
                 return redirect('/index');
             }
             else {
-                return redirect('/home');
+                $id_user = auth()->user()->id;
+                return redirect('/home')->with($id_user);
             }
         }
         return redirect()->back()->with('pesan', 'Login anda Gagal!');

@@ -16,6 +16,16 @@
     <title>Document</title>
 </head>
 <body>
+    <nav class="navbar navbar-expand-lg navbar-dark gradient-custom fixed-top">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand" href="/home">Ini Judul</a>
+                    <a href="/auth/logout" onclick="return window.confirm('Apakah anda ingin Logout?')" style="text-decoration: none" class="btn btn-outline-light">
+                    <i class="bi bi-box-arrow-right"></i>
+                    Logout
+                    </a>
+            </div>
+        </div>
+    </nav>
 <section class="h-100 gradient-custom">
     <div class="container py-5">
       <div class="row d-flex justify-content-center my-4">

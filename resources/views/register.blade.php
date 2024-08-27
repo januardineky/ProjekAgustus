@@ -63,27 +63,24 @@ border-bottom-right-radius: 15px;
                         <form action="/createuser" method="post">
                         @csrf
                         <h3 class="fw-normal mb-5 text-white">Informasi Umum</h3>
-                        @if (Session::has('pesan'))
-                        <div class="alert alert-danger fw-medium text-black">{{ Session::get('pesan') }}</div>
-                        @endif
 
                         <div class="mb-4 pb-2">
                             <div data-mdb-input-init class="form-outline">
-                              <input type="text" id="form3Examplev4" name="name" class="form-control form-control-lg" />
+                              <input type="text" id="form3Examplev4" name="name" class="form-control form-control-lg" required/>
                               <label class="form-label text-white"  for="form3Examplev4">Nama Lengkap</label>
                             </div>
                           </div>
 
                           <div class="mb-4">
                             <div data-mdb-input-init class="form-outline form-white">
-                              <input type="email" id="form3Examplea9" name="email" class="form-control form-control-lg" />
+                              <input type="email" id="form3Examplea9" name="email" class="form-control form-control-lg" required/>
                               <label class="form-label text-white" for="form3Examplea9">Email</label>
                             </div>
                           </div>
 
                           <div class="mb-4 pb-2">
                             <div data-mdb-input-init class="form-outline form-white">
-                              <input type="number" id="form3Examplea6" name="no" class="form-control form-control-lg" />
+                              <input type="number" id="form3Examplea6" name="no" class="form-control form-control-lg" required/>
                               <label class="form-label text-white"  for="form3Examplea6">Nomor Telpon</label>
                             </div>
                           </div>
@@ -91,7 +88,7 @@ border-bottom-right-radius: 15px;
                         <div class="row">
                             <div class="mb-4 pb-2">
                                 <div data-mdb-input-init class="form-outline form-white">
-                                  <input type="password" id="form3Examplea6" name="password" class="form-control form-control-lg" />
+                                  <input type="password" id="form3Examplea6" name="password" class="form-control form-control-lg" required />
                                   <label class="form-label text-white"  for="form3Examplea6">Password</label>
                                 </div>
                               </div>

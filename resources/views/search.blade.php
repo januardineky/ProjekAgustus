@@ -59,41 +59,6 @@
             </div>
         </nav>
         <!-- Header-->
-        <div id="carouselExampleIndicators" class="carousel slide trigger" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" class="active" aria-current="true" aria-label="Slide 2"></button>
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" class="active" aria-current="true" aria-label="Slide 3"></button>
-            </div>
-            <div class="carousel-inner gradient-custom">
-              <div class="carousel-item active">
-                <div class="d-flex p-5 gap-5 align-items-center justify-content-center">
-                    <img src="{{ asset('asset/logo/asset5.jpg') }}" width="600px" height="450px" alt="...">
-                    <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos velit architecto enim iste facere maiores eius quas adipisci neque, numquam atque doloremque non! Perspiciatis minus officiis ullam accusamus eos laboriosam amet molestiae qui dolore libero. Deleniti, laboriosam! Optio aliquam dolores qui at incidunt sequi doloremque sit cupiditate, tenetur, excepturi obcaecati?</p>
-                </div>
-            </div>
-              <div class="carousel-item">
-                <div class="d-flex p-5 gap-5 align-items-center justify-content-center">
-                    <img src="{{ asset('asset/logo/asset6.jpg') }}" width="600px" height="450px" alt="...">
-                    <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos velit architecto enim iste facere maiores eius quas adipisci neque, numquam atque doloremque non! Perspiciatis minus officiis ullam accusamus eos laboriosam amet molestiae qui dolore libero. Deleniti, laboriosam! Optio aliquam dolores qui at incidunt sequi doloremque sit cupiditate, tenetur, excepturi obcaecati?</p>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="d-flex p-5 gap-5 align-items-center justify-content-center">
-                    <img src="{{ asset('asset/logo/asset7.jpg') }}" width="600px" height="450px" alt="...">
-                    <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos velit architecto enim iste facere maiores eius quas adipisci neque, numquam atque doloremque non! Perspiciatis minus officiis ullam accusamus eos laboriosam amet molestiae qui dolore libero. Deleniti, laboriosam! Optio aliquam dolores qui at incidunt sequi doloremque sit cupiditate, tenetur, excepturi obcaecati?</p>
-                </div>
-              </div>
-            </div>
-            <button class="carousel-control-prev hidden-content" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next hidden-content" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-          </div>
         <!-- Section-->
         <section class="py-5">
             <div class="container px-4 px-lg-5 mt-5" style="padding-bottom: 100px">

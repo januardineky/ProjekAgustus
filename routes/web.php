@@ -24,7 +24,8 @@ Route::post('/createuser',[UserController::class,'createuser']);
 Route::middleware(['\App\Http\Middleware\StatusLogin::class'])->group(function () {
     Route::get('/index',[ProdukController::class,'index']);
     Route::get('/home',[ProdukController::class,'home']);
-    Route::get('/cart',[ProdukController::class,'cart']);
+    Route::post('/home/tambah',[ProdukController::class,'tambah']);
+    Route::get('/home/cart',[ProdukController::class,'cart']);
     Route::post('/index/search',[ProdukController::class,'search']);
     Route::post('/home/search',[ProdukController::class,'cari']);
     Route::get('/index/create',[ProdukController::class,'create']);

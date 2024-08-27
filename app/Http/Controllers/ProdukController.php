@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\keranjang;
 use App\Models\Produk;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
 
 class ProdukController extends Controller
@@ -19,7 +21,8 @@ class ProdukController extends Controller
     public function home()
     {
         $data['produk'] = Produk::all();
-        return view('home',$data);
+        $data['id_user'] = Session::get("id");
+        return view('home', $data);
     }
 
     public function search(Request $request)
@@ -33,7 +36,7 @@ class ProdukController extends Controller
     {
         $data['produk'] = Produk::where('name','LIKE','%'.$request->cari.'%')->orwhere('kategori','LIKE','%'.$request->cari.'%')->get();
         $data['total_produk'] = $data['produk']->count();
-        return view('home',$data);
+        return view('search',$data);
     }
 
     public function create()
@@ -97,9 +100,18 @@ class ProdukController extends Controller
 
         return redirect('/index');
     }
+
+    public function tambah(Request $request)
+    {
+        keranjang::create([
+            'id_produk' => $request->id_produk,
+            'id_user' => $request->id_user,
+        ]);
+        return redirect('/home');
+    }
+
     public function cart()
     {
         return view('cart');
     }
-
 }

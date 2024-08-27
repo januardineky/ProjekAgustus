@@ -39,18 +39,6 @@ class DatabaseSeeder extends Seeder
             'kab' => 'Kota Tasikmalaya',
         ]);
 
-        Produk::create([
-            'name' => 'Pensil (1 Pack)',
-            'kategori' => 'Alat Tulis',
-            'harga' => '15000',
-            'stok' => '10',
-        ]);
-
-        Produk::create([
-            'name' => 'Buku Tulis Big Boss (1 Pack)',
-            'kategori' => 'Buku',
-            'harga' => '40000',
-            'stok' => '20',
-        ]);
+        Produk::factory(30)->create();
     }
 }

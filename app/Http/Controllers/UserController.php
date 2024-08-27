@@ -17,7 +17,7 @@ class UserController extends Controller
 
     public function createuser(Request $request)
     {
-        $user = User::create([
+            User::create([
             'name' => $request->name,
             'email' => $request->email,
             'no' => $request->no,
@@ -29,19 +29,8 @@ class UserController extends Controller
             'pos' => $request->pos,
             'detail' => $request->detail
         ]);
+        return redirect('/');
 
-        if ($user) {
-            $user->validate([
-                'name' => ['required'],
-                'no' => ['required'],
-                'email' => ['required','email'],
-                'password' => ['required'],
-            ]);
-            return redirect('/');
-        }
-        else {
-            return redirect()->back()->with('pesan','Mohon Lengkapi Form ini');
-        }
 
         // $user = new User();
         // $user->name = $request->name;

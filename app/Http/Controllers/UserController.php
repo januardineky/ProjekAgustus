@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Produk;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -10,6 +9,18 @@ use Illuminate\Support\Facades\Auth;
 class UserController extends Controller
 {
     //
+    public function pelanggan()
+    {
+        $data['pelanggan'] = User::where('level','=','pelanggan')->get();
+        return view('pelanggan',$data);
+    }
+
+    public function caripelanggan(Request $request)
+    {
+        $data['pelanggan'] = User::where('level','=','pelanggan')->where('name','LIKE','%'.$request->cari.'%')->get();
+        return view('pelanggan',$data);
+    }
+
     public function register()
     {
         return view('register');
@@ -17,7 +28,7 @@ class UserController extends Controller
 
     public function createuser(Request $request)
     {
-            User::create([
+        User::create([
             'name' => $request->name,
             'email' => $request->email,
             'no' => $request->no,

@@ -58,7 +58,8 @@
                 </div>
             </div>
         </nav>
-        <!-- Header-->
+
+        <h3 class="text-center" style="margin-top: 100px">Daftar Produk</h3>
         <!-- Section-->
         <section class="py-5">
             <div class="container px-4 px-lg-5 mt-5" style="padding-bottom: 100px">

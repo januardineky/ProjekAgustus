@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('id_produk');
             $table->unsignedBigInteger('id_user');
+            $table->integer('jumlah');
+            $table->integer('total')->nullable();
             $table->timestamps();
             $table->foreign('id_produk')->references('id')->on('produks')->cascadeOnDelete()->cascadeOnUpdate();
             $table->foreign('id_user')->references('id')->on('users')->cascadeOnDelete()->cascadeOnUpdate();

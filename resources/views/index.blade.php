@@ -31,7 +31,7 @@
                         <a class="nav-link active" href="#">Pesanan</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Pelanggan</a>
+                        <a class="nav-link active" href="/index/pelanggan">Pelanggan</a>
                     </li>
                 </ul>
             </div>
@@ -50,46 +50,7 @@
         </div>
         </div>
     </nav>
-    <div class="container mt-4">
-        <div class="row">
-            <!-- Card Statistik 1 -->
-            <div class="col-md-3 mb-4">
-                <div class="card text-white bg-primary">
-                    <div class="card-body">
-                        <h5 class="card-title">Total Penjualan</h5>
-                        <p class="card-text">Rp1,200,000,000</p>
-                    </div>
-                </div>
-            </div>
-            <!-- Card Statistik 2 -->
-            <div class="col-md-3 mb-4">
-                <div class="card text-white bg-success">
-                    <div class="card-body">
-                        <h5 class="card-title">Total Produk Terjual</h5>
-                        <p class="card-text">1,234</p>
-                    </div>
-                </div>
-            </div>
-            <!-- Card Statistik 3 -->
-            <div class="col-md-3 mb-4">
-                <div class="card text-white bg-danger">
-                    <div class="card-body">
-                        <h5 class="card-title">Pesanan Terpending</h5>
-                        <p class="card-text">89</p>
-                    </div>
-                </div>
-            </div>
-            <!-- Card Statistik 4 -->
-            <div class="col-md-3 mb-4">
-                <div class="card text-white bg-warning">
-                    <div class="card-body">
-                        <h5 class="card-title">Produk Stok Habis</h5>
-                        <p class="card-text">15</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <h3 class="text-center" style="margin-top: 50px">Total Produk</h3>
     <div class="container pt-5" style="padding-bottom: 250px">
         <div class="row">
             <div class="col-md-6">

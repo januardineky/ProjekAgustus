@@ -106,6 +106,7 @@ class ProdukController extends Controller
         keranjang::create([
             'id_produk' => $request->id_produk,
             'id_user' => $request->id_user,
+            'jumlah' => '1'
         ]);
         return redirect('/home');
     }

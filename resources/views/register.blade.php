@@ -99,17 +99,16 @@ border-bottom-right-radius: 15px;
                         <div class="col-lg-6 bg-transparent text-white">
                         <div class="p-5">
                             <h3 class="fw-normal mb-5">Informasi Tambahan</h3>
-
                             <div class="mb-4 pb-2">
                             <div data-mdb-input-init class="form-outline form-white">
-                                <input type="text" id="form3Examplea2" name="jalan" class="form-control form-control-lg" />
+                                <input type="text" id="form3Examplea2" name="jalan" class="form-control form-control-lg" required/>
                                 <label class="form-label" for="form3Examplea2">Nama Jalan</label>
                             </div>
                             </div>
 
                             <div class="mb-4 pb-2">
                             <div data-mdb-input-init class="form-outline form-white">
-                                <input type="text" id="form3Examplea3" name="kab" class="form-control form-control-lg" />
+                                <input type="text" id="form3Examplea3" name="kab" class="form-control form-control-lg" required/>
                                 <label class="form-label" for="form3Examplea3">Kabupaten/Kota</label>
                             </div>
                             </div>
@@ -118,7 +117,7 @@ border-bottom-right-radius: 15px;
                             <div class="col-md-5 mb-4 pb-2">
 
                                 <div data-mdb-input-init class="form-outline form-white">
-                                <input type="text" id="form3Examplea4" name="pos" class="form-control form-control-lg" />
+                                <input type="text" id="form3Examplea4" name="pos" class="form-control form-control-lg" required/>
                                 <label class="form-label" for="form3Examplea4">Kode Pos</label>
                                 </div>
 
@@ -126,7 +125,7 @@ border-bottom-right-radius: 15px;
                             <div class="col-md-7 mb-4 pb-2">
 
                                 <div data-mdb-input-init class="form-outline form-white">
-                                <input type="text" id="form3Examplea5" name="kec" class="form-control form-control-lg" />
+                                <input type="text" id="form3Examplea5" name="kec" class="form-control form-control-lg" required/>
                                 <label class="form-label"  for="form3Examplea5">Kecamatan</label>
                                 </div>
 
@@ -135,7 +134,7 @@ border-bottom-right-radius: 15px;
 
                             <div class="mb-4">
                                 <div data-mdb-input-init class="form-outline form-white">
-                                <input type="text" id="form3Examplea9" name="detail" class="form-control form-control-lg" />
+                                <input type="text" id="form3Examplea9" name="detail" class="form-control form-control-lg" required/>
                                 <label class="form-label" for="form3Examplea9">Detail Tambahan</label>
                                 </div>
                             </div>
@@ -148,8 +147,7 @@ border-bottom-right-radius: 15px;
                             </div>
 
                             <input type="submit" value="Register" class="btn btn-outline-light w-100"></input>
-                    </form>
-
+                        </form>
                       </div>
                     </div>
                   </div>

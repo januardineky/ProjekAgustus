@@ -16,6 +16,8 @@ return new class extends Migration
             $table->unsignedBigInteger('id_produk')->nullable();
             $table->unsignedBigInteger('id_user');
             $table->integer('jumlah')->nullable();
+            $table->integer('subtotal')->nullable();
+            $table->enum('status', ['Sudah Sampai', 'Sudah Dipesan', 'Belum Dipesan'])->nullable();
             $table->integer('total')->nullable();
             $table->timestamps();
             $table->foreign('id_produk')->references('id')->on('produks')->cascadeOnDelete()->cascadeOnUpdate();

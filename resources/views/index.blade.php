@@ -28,7 +28,7 @@
             <div style="margin-right: 400px">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Pesanan</a>
+                        <a class="nav-link active" href="/index/pesanan">Pesanan</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="/index/pelanggan">Pelanggan</a>

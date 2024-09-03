@@ -19,6 +19,6 @@ class Produk extends Model
 
     public function keranjangs()
     {
-        return $this->hasMany(Keranjang::class);
+        return $this->hasMany(keranjang::class, 'id_produk');
     }
 }

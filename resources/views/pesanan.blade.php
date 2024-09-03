@@ -26,7 +26,7 @@
             <div style="margin-right: 400px">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" href="/index/pesanan">Pesanan</a>
+                        <a class="nav-link active" href="#">Pesanan</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="/index/pelanggan">Pelanggan</a>
@@ -49,35 +49,30 @@
         </div>
     </nav>
     <div class="row">
-        <div class="col-md-12" style="padding-bottom: 310px">
+        <div class="col-md-12" style="padding-bottom: 345px">
             <h4 class="text-center" style="margin: 50px">Daftar Pelanggan</h4>
             <table class="table table-striped">
                 <thead>
                     <tr>
                         <th scope="col">No</th>
                         <th scope="col">Nama Pelanggan</th>
-                        <th scope="col">Nomor</th>
-                        <th scope="col">Email</th>
-                        <th scope="col">Kabupaten/Kota</th>
-                        <th scope="col">Kecamatan</th>
-                        <th scope="col">Kode Pos</th>
-                        <th scope="col">Jalan</th>
-                        <th scope="col">Detail</th>
+                        <th scope="col">Total Harga</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($pelanggan as $key => $item)
-                     <tr>
+                    @foreach ($order as $key => $item)
+                    <tr>
                         <th scope="row">{{ $key + 1 }}</th>
-                        <td>{{ $item->name }}</td>
-                        <td>{{ $item->no }}</td>
-                        <td>{{ $item->email }}</td>
-                        <td>{{ $item->kab }}</td>
-                        <td>{{ $item->kec }}</td>
-                        <td>{{ $item->pos }}</td>
-                        <td>{{ $item->jalan }}</td>
-                        <td>{{ $item->detail }}</td>
-                     </tr>
+                        <td>{{ $item->user->name }}</td>
+                        <td>{{ $item->total }}</td>
+                        <td>{{ $item->status }}</td>
+                        <td>
+                            <a href="" class="btn btn-info text-white" onclick="return window.confirm('Yakin ubah data ini?')">Selesai</a>
+                            <a href="/index/cart/delete/{{ $item->id }}" class="btn btn-danger text-white" onclick="return window.confirm('Yakin hapus data ini?')">Hapus</a>
+                        </td>
+                    </tr>
                     @endforeach
                 </tbody>
             </table>

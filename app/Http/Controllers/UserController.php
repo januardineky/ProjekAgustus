@@ -70,6 +70,21 @@ class UserController extends Controller
         return redirect()->back()->with('pesan', 'Login anda Gagal!');
 
     }
+
+    public function order()
+    {
+        $data['order'] = Keranjang::with('user')->get();
+        // $data['total'] = $data['order']->where('total')
+        // dd($data['order']);
+        return view('pesanan', $data);
+    }
+
+    public function hapusorder(Request $request)
+    {
+        keranjang::where('id',$request->id)->delete();
+        return redirect()->back();
+    }
+
     public function logout()
     {
         Auth::logout();

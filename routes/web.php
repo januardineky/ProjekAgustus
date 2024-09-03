@@ -25,6 +25,8 @@ Route::middleware(['\App\Http\Middleware\StatusLogin::class'])->group(function (
     Route::middleware(['\App\Http\Middleware\adminauth::class'])->group(function () {
         Route::get('/index',[ProdukController::class,'index']);
         Route::get('/index/pelanggan',[UserController::class,'pelanggan']);
+        Route::get('/index/pesanan',[UserController::class,'order']);
+        Route::get('/index/cart/delete/{id}',[UserController::class, 'hapusorder']);
         Route::post('/index/caripelanggan',[UserController::class,'caripelanggan']);
         Route::get('/index/create',[ProdukController::class,'create']);
         Route::get('/index/delete/{id}',[ProdukController::class,'delete']);
@@ -34,10 +36,12 @@ Route::middleware(['\App\Http\Middleware\StatusLogin::class'])->group(function (
         Route::post('/index/search',[ProdukController::class,'search']);
     });
     Route::get('/home',[ProdukController::class,'home']);
-    Route::post('/home/tambah',[ProdukController::class,'tambah']);
+    // Route::post('/home/tambah',[ProdukController::class,'tambah']);
     // Route::get('/home/cart/{keranjang}',[ProdukController::class,'cart']);
-    Route::get('/home/cart/{id}',[ProdukController::class,'cart']);
+    Route::get('/home/cart',[ProdukController::class,'cart']);
+    Route::post('/home/tambah/{id}',[ProdukController::class,'tambah']);
     Route::get('/home/cart/delete/{id}',[ProdukController::class,'hapusproduk']);
+    Route::post('/home/cart/tambah/{id}',[ProdukController::class,'editjumlah']);
     Route::post('/home/search',[ProdukController::class,'cari']);
     Route::get('/auth/logout',[UserController::class,'logout']);
 });

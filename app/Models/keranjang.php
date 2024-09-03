@@ -15,9 +15,13 @@ class keranjang extends Model
 
     protected $guarded = [];
 
+    protected $fillable = [
+        'status'
+    ];
+
     public function item()
     {
-        return $this->belongsTo(Produk::class, 'id');
+        return $this->belongsTo(Produk::class, 'id_produk');
     }
     public function user()
     {

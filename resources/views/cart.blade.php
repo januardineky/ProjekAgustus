@@ -32,7 +32,7 @@
         <div class="col-md-8">
           <div class="card mb-4">
             <div class="card-header py-3">
-              <h5 class="mb-0">Keranjang {{ $user->name }}</h5>
+              <h5 class="mb-0">My Cart</h5>
             </div>
             <div class="card-body">
               <!-- Single item -->
@@ -60,16 +60,20 @@
                 </div>
 
                 <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
-                  <!-- Quantity -->
+                    <!-- Quantity -->
+                <label class="form-label" for="form1">Jumlah</label>
+                <form action="cart/tambah/{{ $item->id }}" method="post">
+                @csrf
                   <div class="mb-4" style="max-width: 300px">
-                    <label class="form-label" for="form1">Jumlah</label>
-                    <input type="number" value="{{ $item->jumlah }}" name="jumlah" id="jumlah{{ $item->id }}" readonly>
+                    <input type="number" class="form-control" value="{{ $item->jumlah }}" name="jumlah">
+                    <input type="submit" style="margin-top: 20px; width: 220px" class="btn btn-primary" value="Ubah">
                   </div>
+                </form>
                   <!-- Quantity -->
 
                   <!-- Price -->
                   <p class="text-start">
-                    <strong>Total : {{ $item->total }}</strong>
+                    <strong>Total : {{$item->subtotal}}</strong>
                   </p>
                   <!-- Price -->
                 </div>
@@ -79,42 +83,24 @@
               <!-- Single item -->
             </div>
           </div>
-          <div class="card mb-4">
-            <div class="card-body">
-              <p><strong>Expected shipping delivery</strong></p>
-              <p class="mb-0">12.10.2020 - 14.10.2020</p>
-            </div>
-          </div>
         </div>
         <div class="col-md-4">
           <div class="card mb-4">
             <div class="card-header py-3">
-              <h5 class="mb-0">Summary</h5>
+              <h5 class="mb-0">Ringkasan</h5>
             </div>
             <div class="card-body">
               <ul class="list-group list-group-flush">
                 <li
-                  class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
-                  Products
-                  <span>$53.98</span>
-                </li>
-                <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                  Shipping
-                  <span>Gratis</span>
-                </li>
-                <li
                   class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
                   <div>
-                    <strong>Total amount</strong>
-                    <strong>
-                      <p class="mb-0">(including VAT)</p>
-                    </strong>
+                    <strong>Total Harga</strong>
                   </div>
-                  <span><strong>$53.98</strong></span>
+                  <span><strong>Rp. {{ $total }}</strong></span>
                 </li>
               </ul>
 
-              <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-lg btn-block">
+              <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-lg btn-block" style="margin-left: 75px">
                 Pesan Sekarang
               </button>
               </div>

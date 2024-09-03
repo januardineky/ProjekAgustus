@@ -7,6 +7,7 @@ use App\Models\Produk;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
 
@@ -96,44 +97,27 @@ class ProdukController extends Controller
         return redirect('/index');
     }
 
-    public function tambah(Request $request)
+    public function tambah($id)
     {
-        // $user = Auth()->user();
+        $itemHarga = Produk::where('id', $id)->value('harga');
 
-        // keranjang::create([
-        //     'id_produk' => $request->id_produk,
-        //     'id_user' => $user->id,
-        //     'jumlah' => '1'
-        // ]);
-        // return redirect('/home');
+        $jumlah = keranjang::where('id_user', auth()->user()->id)
+            ->where('id_produk', $id)
+            ->value('jumlah');
 
-        $user = Auth::user();
+        $subtotal = ($jumlah ?: 0) + 1;
+        $subtotalValue = $itemHarga * $subtotal;
 
-    // Ambil jumlah dari request, default ke 1 jika tidak ada
-    $jumlah = $request->input('jumlah', 1);
-
-    // Cek apakah produk sudah ada di keranjang
-    $existingItem = Keranjang::where('id_produk', $request->id_produk)
-        ->where('id_user', $user->id)
-        ->first();
-
-    if ($existingItem) {
-        // Jika produk sudah ada, tambahkan jumlahnya
-        $existingItem->jumlah += $jumlah;
-        $existingItem->total = $existingItem->jumlah * $existingItem->item->harga; // Update total
-        $existingItem->save();
-    } else {
-        // Jika produk belum ada, tambahkan ke keranjang
-        $produk = Produk::find($request->id_produk);
-        Keranjang::create([
-            'id_produk' => $request->id_produk,
-            'id_user' => $user->id,
-            'jumlah' => $jumlah,
-            'total' => $jumlah * $produk->harga
+        keranjang::with('item')->updateOrInsert([
+        'id_user' => auth()->user()->id,
+        'id_produk' => $id,
+        ],[
+        'jumlah' => $subtotal,
+        'subtotal' => $subtotalValue,
+        'status' => 'Belum Dipesan'
         ]);
-    }
 
-    return redirect('/home');
+        return redirect('/home');
     }
 
     public function home()
@@ -143,37 +127,28 @@ class ProdukController extends Controller
         return view('home', $data);
     }
 
-    public function cart($keranjang)
+    public function cart()
     {
-        // $data['user'] = Keranjang::where('id_user',$keranjang)->with('user')->first();
-        // $data['produk'] = Keranjang::with(['item', 'user'])
-        // ->where('id_user', $keranjang)
-        // ->get();
-        // return view('cart', $data);
-
-        // dd($data['produk']);
-
-        $data['user'] = User::find($keranjang);
-        $data['produk'] = Keranjang::with('item')
-        ->where('id_user', $keranjang)
-        ->get();
-
-    return view('cart', $data);
+        $data['produk'] = keranjang::with('item')->get();
+        $data['jumlah'] = $data['produk']->count();
+        $total = 0;
+        foreach ($data['produk'] as $keranjang) {
+            $total += $keranjang->subtotal;
+        }
+        $data['total'] = $total;
+        return view('cart', $data);
     }
 
-    public function editjumlah($keranjang)
+    public function editjumlah($id, Request $request)
     {
+    $keranjang = keranjang::with('item')->where('id',$id)->first();
 
-        $data['user'] = User::find($keranjang);
-        $produk = Keranjang::with('item')
-        ->where('id_user', $keranjang)
-        ->get();
+    $keranjang->update([
+        'jumlah' => $request->jumlah,
+        'subtotal' => $keranjang->item->harga * $request->jumlah
+    ]);
 
-        $totalHarga = $produk->sum(function ($item) {
-            return $item->jumlah * $item->item->harga;
-        });
-
-        return view('cart', compact('produk', 'totalHarga'),$data);
+    return redirect('/home/cart');
     }
 
     public function hapusproduk($keranjang)

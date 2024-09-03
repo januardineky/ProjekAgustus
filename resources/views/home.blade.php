@@ -47,7 +47,7 @@
                         <input class="form-control me-2 w-100" type="search" placeholder="Search" name="cari" aria-label="Search">
                         <input class="btn btn-outline-light" value="Cari" type="submit"></input>
                     </form>
-                        <a href="{{'/home/cart/'.auth()->user()->id }}" style="text-decoration: none" class="btn btn-outline-light" style="margin-left: 50px">
+                        <a href="/home/cart" style="text-decoration: none" class="btn btn-outline-light" style="margin-left: 50px">
                             <i class="bi-cart me-1"></i>
                             Keranjang
                         </a>
@@ -116,10 +116,8 @@
                             </div>
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent" style="margin-top: -25px">
-                                <form action="/home/tambah" method="post">
+                                <form action="/home/tambah/{{ $item->id }}" method="post">
                                     @csrf
-                                    <input type="hidden" name="id_produk" value="{{$item->id}}">
-                                    <input type="hidden" name="id_user" value="{{$item->id}}">
                                     <input type="submit" class="btn btn-outline-dark mt-auto" name="input" value="Tambah">
                                 </form>
                             </div>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\keranjang;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -38,23 +39,12 @@ class UserController extends Controller
             'level' => 'pelanggan',
             'kec' => $request->kec,
             'pos' => $request->pos,
-            'detail' => $request->detail
+            'detail' => $request->detail,
         ]);
+        // $keranjang = new keranjang();
+        // $keranjang->id_user = $user->id;
+        // $keranjang->save();
         return redirect('/');
-
-
-        // $user = new User();
-        // $user->name = $request->name;
-        // $user->email = $request->email;
-        // $user->no = $request->no;
-        // $user->password = bcrypt($request->password);
-        // $user->jalan = $request->jalan;
-        // $user->kab = $request->kab;
-        // $user->level = 'pelanggan';
-        // $user->kec = $request->kec;
-        // $user->pos = $request->pos;
-        // $user->detail = $request->detail;
-        // $user->save();
     }
 
     public function auth(Request $request)
@@ -73,8 +63,8 @@ class UserController extends Controller
                 return redirect('/index');
             }
             else {
-                $id_user = auth()->user()->id;
-                return redirect('/home')->with($id_user);
+                // $id_user = auth()->user()->id;
+                return redirect('/home');
             }
         }
         return redirect()->back()->with('pesan', 'Login anda Gagal!');

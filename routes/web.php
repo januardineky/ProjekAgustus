@@ -35,7 +35,9 @@ Route::middleware(['\App\Http\Middleware\StatusLogin::class'])->group(function (
     });
     Route::get('/home',[ProdukController::class,'home']);
     Route::post('/home/tambah',[ProdukController::class,'tambah']);
-    Route::get('/home/cart',[ProdukController::class,'cart']);
+    // Route::get('/home/cart/{keranjang}',[ProdukController::class,'cart']);
+    Route::get('/home/cart/{id}',[ProdukController::class,'cart']);
+    Route::get('/home/cart/delete/{id}',[ProdukController::class,'hapusproduk']);
     Route::post('/home/search',[ProdukController::class,'cari']);
     Route::get('/auth/logout',[UserController::class,'logout']);
 });

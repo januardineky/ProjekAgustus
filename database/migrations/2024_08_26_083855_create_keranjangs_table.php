@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('keranjangs', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_produk');
+            $table->unsignedBigInteger('id_produk')->nullable();
             $table->unsignedBigInteger('id_user');
-            $table->integer('jumlah');
+            $table->integer('jumlah')->nullable();
             $table->integer('total')->nullable();
             $table->timestamps();
             $table->foreign('id_produk')->references('id')->on('produks')->cascadeOnDelete()->cascadeOnUpdate();
